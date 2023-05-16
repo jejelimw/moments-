@@ -1,19 +1,31 @@
 <form (ngSubmit)="submit()" [formGroup]="momentForm" #formDir="ngForm">
     <div class="form-group">
-        <label for="title">Title:</label>
-        <input type="text" placeholder="Put a title" formControlName="title" required />
-    </div>
+              <label for="title">Title:</label>
+              <input type="text" placeholder="Put a title" 
+                     formControlName="title" 
+                       required 
+        />
     <div *ngIf="title.invalid && formDir.submitted" class="validation-error">
-        <p>The title is required.</p>
-    </divv>
+              <p *ngIf="title.errors?.['required']">The title is required.</p> 
+    
+           </div>
+       </div>
     <div class="form-group">
-        <label for="description">Description:</label>
-        <textarea placeholder="What happened there?" required></textarea>
-    </div>
+              <label for="description">Description:</label>
+              <input type="text" 
+                     placeholder="What happened there?" 
+                     formControlName="description"
+                        required
+         />
+        <div *ngIf="description.invalid && formDir.submitted" class="validation-error">
+            <p *ngIf="description.errors?.['required']">The description is required.</p> 
+                </div>
+            </div>   
+       
     <div class="form-group">
-        <label for="image">Put the photo that marked the most:</label>
-        <input type="file">
-    </div>
+              <label for="image">Put the photo that marked the most:</label>
+              <input type="file" (change)="onFileSelected($event)" />
+        </div>
         <input type="submit" value="Share!" />
         
 </form>
