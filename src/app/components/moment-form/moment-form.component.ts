@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 
+import { NewMomentComponent } from '../pages/new-moment/new-moment.component';
 import { Moment } from 'src/app/Moments';
 
 @Component({
