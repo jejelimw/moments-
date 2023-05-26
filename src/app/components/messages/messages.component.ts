@@ -16,7 +16,7 @@ message: string = '';
 
     setTimeout(() => {
       this.clear();
-    }, 4000);
+    }, 2000);
   }
  clear(){
   this.message = ''
