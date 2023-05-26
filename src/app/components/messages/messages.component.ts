@@ -11,9 +11,14 @@ export class MessagesComponent {
 faTimes = faTimes;
 message: string = '';
 
-  constructor(public messagesService: MessagesService) {}
+  constructor(public messagesService: MessagesService) {
+    this.messagesService.add('foi');
 
-  ngOnInit() {
-
+    setTimeout(() => {
+      this.clear();
+    }, 4000);
   }
-}
+ clear(){
+  this.message = ''
+ }
+  };
